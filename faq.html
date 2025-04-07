@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DIRI BAKAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question.active:after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">DIRI BAKAL</a>
+            </div>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="shop.html">Shop</a>
+                        <div class="dropdown-content">
+                            <a href="men.html">Men</a>
+                            <a href="women.html">Women</a>
+                            <a href="kids.html">Kids</a>
+                            <a href="accessories.html">Accessories</a>
+                        </div> 
+                    </li>
+                    <li><a href="New Arrivals.html">New Arrivals</a></li>
+                    <li><a href="Sale.html">Sale</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                
+                <a href="account.html" class="icon-btn"><i class="fas fa-user"></i></a>
+                
+                <a href="cart.html" class="icon-btn cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="faq-container">
+                <h1 class="page-title">Frequently Asked Questions</h1>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I place an order?</div>
+                    <div class="faq-answer">
+                        <p>Placing an order on DIRI BAKAL is easy! Simply browse our collections, select the items you want, choose your size and color, and add them to your cart. When you're ready to checkout, click on the shopping cart icon, review your order, and follow the checkout process. You'll need to provide your shipping information and payment details to complete your purchase.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <div class="faq-answer">
+                        <p>We accept various payment methods including credit cards (Visa, MasterCard, American Express), PayPal, and other local payment options depending on your location. All payments are securely processed to ensure your information remains protected.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How can I track my order?</div>
+                    <div class="faq-answer">
+                        <p>Once your order is shipped, you will receive a confirmation email with a tracking number and link. You can also track your order by logging into your account on our website and viewing your order history. If you have any issues tracking your order, please contact our customer service team.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is your return policy?</div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day return policy for items in their original condition with tags attached. To initiate a return, please visit our Returns page or contact our customer service. Please note that certain items like swimwear, underwear, and accessories may have different return conditions for hygiene reasons. For more detailed information, please check our Shipping & Returns page.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you ship internationally?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we ship to many countries worldwide. Shipping costs and delivery times vary depending on your location. You can view the shipping options available to your country during checkout. Please note that international orders may be subject to customs duties and taxes, which are the responsibility of the customer.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I find my size?</div>
+                    <div class="faq-answer">
+                        <p>We provide detailed size guides for all our products to help you find the perfect fit. You can find our size guide on the product page or visit our dedicated Size Guide page. If you're between sizes, we generally recommend sizing up for a more comfortable fit. If you need further assistance, please contact our customer service team.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I change or cancel my order?</div>
+                    <div class="faq-answer">
+                        <p>Orders are processed quickly to ensure fast delivery. If you need to change or cancel your order, please contact our customer service team as soon as possible. We'll do our best to accommodate your request, but we cannot guarantee changes or cancellations once the order has been processed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer discounts or promotions?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we regularly offer promotions and seasonal sales. To stay updated on our latest discounts, you can subscribe to our newsletter, follow us on social media, or check our Sale page. We also have special offers for first-time customers and loyalty rewards for returning customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>DIRI BAKAL</h3>
+                    <p>Your one-stop destination for trendy and affordable fashion.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/evr1hatesralph"><i class="fab fa-facebook-f"></i></a>
+                    
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="accessories.html">Accessories</a></li>
+                        <li><a href="New Arrivals.html">New Arrivals</a></li>
+                        <li><a href="Sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html" class="active">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TambaySaColdZone. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('show');
+                    
+                    // Close other open FAQs
+                    questions.forEach(item => {
+                        if (item !== question) {
+                            item.classList.remove('active');
+                            item.nextElementSibling.classList.remove('show');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - DIRI BAKAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Cart Page Specific Styles */
+        .cart-container {
+            padding: 40px 0;
+        }
+        
+        .cart-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .cart-table th {
+            background-color: #f8f8f8;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .cart-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+        
+        .cart-product {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .cart-product-title {
+            font-weight: 500;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            background: #f1f1f1;
+            border: none;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+        }
+        
+        .remove-btn {
+            background: transparent;
+            border: none;
+            color: #ff4242;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .cart-total {
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        
+        .cart-total h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .total-row.final {
+            font-weight: 600;
+            font-size: 18px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #333;
+        }
+        
+        .cart-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .cart-items {
+            width: 65%;
+        }
+        
+        .cart-sidebar {
+            width: 30%;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .empty-cart i {
+            font-size: 60px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .empty-cart h2 {
+            margin-bottom: 20px;
+        }
+        
+        .continue-shopping {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+        /* Checkout Form Styles */
+        .checkout-form {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            display: none; /* Initially hidden */
+        }
+        
+        .checkout-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .payment-methods {
+            margin-bottom: 20px;
+        }
+        
+        .payment-method {
+            margin-bottom: 10px;
+        }
+        
+        .payment-method input {
+            margin-right: 8px;
+        }
+        
+        .order-btn {
+            background-color: #000;
+            color: #fff;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .order-btn:hover {
+            background-color: #333;
+        }
+        
+        .back-to-cart {
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+            color: #666;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        /* Order confirmation styles */
+        .order-confirmation {
+            text-align: center;
+            padding: 50px 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .order-confirmation i {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .order-confirmation h2 {
+            margin-bottom: 15px;
+        }
+        
+        .order-details {
+            margin: 30px 0;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .order-details p {
+            margin-bottom: 10px;
+        }
+        
+        .return-to-shop {
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .cart-flex {
+                flex-direction: column;
+            }
+            
+            .cart-items, .cart-sidebar {
+                width: 100%;
+            }
+            
+            .cart-sidebar {
+                margin-top: 30px;
+            }
+            
+            .cart-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">DIRI BAKAL</a>
+            </div>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="shop.html">Shop</a>
+                        <div class="dropdown-content">
+                            <a href="men.html">Men</a>
+                            <a href="women.html">Women</a>
+                            <a href="kids.html">Kids</a>
+                            <a href="accessories.html">Accessories</a>
+                        </div> 
+                    </li>
+                    <li><a href="New Arrivals.html">New Arrivals</a></li>
+                    <li><a href="Sale.html">Sale</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="account.html" class="icon-btn"><i class="fas fa-user"></i></a>
+                
+                <a href="cart.html" class="icon-btn cart-icon active">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container cart-container">
+            <div class="cart-header">
+                <h1>Shopping Cart</h1>
+            </div>
+            
+            <div id="cart-content">
+                <!-- Cart content will be inserted here via JavaScript -->
+            </div>
+            
+            <!-- Checkout Form -->
+            <div id="checkout-form" class="checkout-form">
+                <h2>Checkout</h2>
+                <form id="checkout-details">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="state">State/Province</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="zip">ZIP/Postal Code</label>
+                            <input type="text" id="zip" name="zip" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="AU">Australia</option>
+                            <option value="PH">Philippines</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                    </div>
+                    
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" id="credit-card" name="payment" value="credit-card" checked>
+                            <label for="credit-card">Credit/Debit Card</label>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="paypal" name="payment" value="paypal">
+                            <label for="paypal">PayPal</label>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="cod" name="payment" value="cod">
+                            <label for="cod">Cash on Delivery</label>
+                        </div>
+                    </div>
+                    
+                    <div id="credit-card-details">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="order-btn">Place Order</button>
+                </form>
+                <a class="back-to-cart" id="back-to-cart">← Back to Cart</a>
+            </div>
+            
+            <!-- Order Confirmation -->
+            <div id="order-confirmation" class="order-confirmation">
+                <i class="fas fa-check-circle"></i>
+                <h2>Thank You For Your Order!</h2>
+                <p>Your order has been placed successfully.</p>
+                <div class="order-details">
+                    <p><strong>Order Number:</strong> <span id="order-number"></span></p>
+                    <p><strong>Order Date:</strong> <span id="order-date"></span></p>
+                    <p><strong>Order Total:</strong> $<span id="order-total"></span></p>
+                    <p>A confirmation email has been sent to <span id="order-email"></span></p>
+                </div>
+                <a href="shop.html" class="return-to-shop">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>DIRI BAKAL</h3>
+                    <p>Your one-stop destination for trendy and affordable fashion.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/evr1hatesralph"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="accessories.html">Accessories</a></li>
+                        <li><a href="New Arrivals.html">New Arrivals</a></li>
+                        <li><a href="Sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TambaySaColdZone. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load cart from localStorage
+            const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+            const cartContentElement = document.getElementById('cart-content');
+            const checkoutFormElement = document.getElementById('checkout-form');
+            const orderConfirmationElement = document.getElementById('order-confirmation');
+            
+            // Update cart count in header
+            updateCartCount();
+            
+            // Render cart content
+            renderCart();
+            
+            function renderCart() {
+                if (cart.length === 0) {
+                    // Show empty cart message
+                    cartContentElement.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h2>Your cart is empty</h2>
+                            <p>Looks like you haven't added any products to your cart yet.</p>
+                            <a href="shop.html" class="continue-shopping">Continue Shopping</a>
+                        </div>
+                    `;
+                    
+                    // Hide checkout form if visible
+                    checkoutFormElement.style.display = 'none';
+                } else {
+                    // Calculate totals
+                    const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                    const shipping = subtotal > 100 ? 0 : 10; // Free shipping over $100
+                    const total = subtotal + shipping;
+                    
+                    // Store total in localStorage for checkout process
+                    localStorage.setItem('cartTotal', total.toFixed(2));
+                    
+                    // Show cart with items
+                    cartContentElement.innerHTML = `
+                        <div class="cart-flex">
+                            <div class="cart-items">
+                                <table class="cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Subtotal</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cart-items">
+                                        ${cart.map(item => `
+                                            <tr data-id="${item.id}">
+                                                <td>
+                                                    <div class="cart-product">
+                                                        <img src="${item.image}" alt="${item.title}" class="cart-product-image">
+                                                        <span class="cart-product-title">${item.title}</span>
+                                                    </div>
+                                                </td>
+                                                <td>$${item.price.toFixed(2)}</td>
+                                                <td>
+                                                    <div class="quantity-controls">
+                                                        <button class="quantity-btn decrease-quantity" data-id="${item.id}">-</button>
+                                                        <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                                                        <button class="quantity-btn increase-quantity" data-id="${item.id}">+</button>
+                                                    </div>
+                                                </td>
+                                                <td>$${(item.price * item.quantity).toFixed(2)}</td>
+                                                <td>
+                                                    <button class="remove-btn" data-id="${item.id}">
+                                                        <i class="fas fa-trash"></i> Remove
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="cart-sidebar">
+                                <div class="cart-total">
+                                    <h3>Order Summary</h3>
+                                    <div class="total-row">
+                                        <span>Subtotal</span>
+                                        <span>$${subtotal.toFixed(2)}</span>
+                                    </div>
+                                    <div class="total-row">
+                                        <span>Shipping</span>
+                                        <span>${shipping === 0 ? 'Free' : '$' + shipping.toFixed(2)}</span>
+                                    </div>
+                                    <div class="total-row final">
+                                        <span>Total</span>
+                                        <span>$${total.toFixed(2)}</span>
+                                    </div>
+                                    <button class="checkout-btn">Proceed to Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Add event listeners for cart actions
+                    addCartEventListeners();
+                }
+            }
+            
+            function addCartEventListeners() {
+                // Quantity increase buttons
+                document.querySelectorAll('.increase-quantity').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const id = this.getAttribute('data-id');
+                        const itemIndex = cart.findIndex(item => item.id === id);
+                        
+                        if (itemIndex > -1) {
+                            cart[itemIndex].quantity += 1;
+                            saveCart();
+                            renderCart();
+                        }
+                    });
+                });
+                
+                // Quantity decrease buttons
+                document.querySelectorAll('.decrease-quantity').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const id = this.getAttribute('data-id');
+                        const itemIndex = cart.findIndex(item => item.id === id);
+                        
+                        if (itemIndex > -1) {
+                            if (cart[itemIndex].quantity > 1) {
+                                cart[itemIndex].quantity -= 1;
+                            } else {
+                                // Remove item if quantity would be 0
+                                cart.splice(itemIndex, 1);
+                            }
+                            saveCart();
+                            renderCart();
+                        }
+                    });
+                });
+                
+                // Remove buttons
+                document.querySelectorAll('.remove-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const id = this.getAttribute('data-id');
+                        const itemIndex = cart.findIndex(item => item.id === id);
+                        
+                        if (itemIndex > -1) {
+                            cart.splice(itemIndex, 1);
+                            saveCart();
+                            renderCart();
+                        }
+                    });
+                });
+                
+                // Checkout button
+                document.querySelector('.checkout-btn').addEventListener('click', function() {
+                    // Show checkout form
+                    cartContentElement.style.display = 'none';
+                    checkoutFormElement.style.display = 'block';
+                    
+                    // Scroll to top of page
+                    window.scrollTo(0, 0);
+                });
+            }
+            
+            // Back to cart link
+            document.getElementById('back-to-cart').addEventListener('click', function() {
+                cartContentElement.style.display = 'block';
+                checkoutFormElement.style.display = 'none';
+            });
+            
+            // Process checkout form submission
+            document.getElementById('checkout-details').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Generate order number
+                const orderNumber = 'DB' + Date.now().toString().slice(-8);
+                
+                // Get current date
+                const orderDate = new Date().toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                // Get order total from localStorage
+                const orderTotal = localStorage.getItem('cartTotal') || '0.00';
+                
+                // Get customer email
+                const customerEmail = document.getElementById('email').value;
+                
+                // Display order confirmation
+                document.getElementById('order-number').textContent = orderNumber;
+                document.getElementById('order-date').textContent = orderDate;
+                document.getElementById('order-total').textContent = orderTotal;
+                document.getElementById('order-email').textContent = customerEmail;
+                
+                // Hide checkout form and show confirmation
+                checkoutFormElement.style.display = 'none';
+                orderConfirmationElement.style.display = 'block';
+                
+                // Clear cart
+                localStorage.removeItem('shoppingCart');
+                localStorage.removeItem('cartTotal');
+                cart.length = 0;
+                updateCartCount();
+                
+                // Scroll to top of page
+                window.scrollTo(0, 0);
+            });
+            
+            // Payment method toggle (for credit card details)
+            document.querySelectorAll('input[name="payment"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const creditCardDetails = document.getElementById('credit-card-details');
+                    if (this.value === 'credit-card') {
+                        creditCardDetails.style.display = 'block';
+                    } else {
+                        creditCardDetails.style.display = 'none';
+                    }
+                });
+            });
+            
+            function saveCart() {
+                localStorage.setItem('shoppingCart', JSON.stringify(cart));
+                updateCartCount();
+            }
+            
+            function updateCartCount() {
+                const cartCountElement = document.querySelector('.cart-count');
+                if (cartCountElement) {
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    cartCountElement.textContent = totalItems;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

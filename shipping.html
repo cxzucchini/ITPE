@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping & Returns - DIRI BAKAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .shipping-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .info-section {
+            margin-bottom: 40px;
+        }
+        
+        .info-section h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .shipping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .shipping-table th, .shipping-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .shipping-table th {
+            background-color: #f8f8f8;
+        }
+        
+        .shipping-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .note-box {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-left: 4px solid #4a90e2;
+            margin-bottom: 20px;
+        }
+        
+        .steps-list {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .steps-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            counter-increment: step-counter;
+        }
+        
+        .steps-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">DIRI BAKAL</a>
+            </div>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="shop.html">Shop</a>
+                        <div class="dropdown-content">
+                            <a href="men.html">Men</a>
+                            <a href="women.html">Women</a>
+                            <a href="kids.html">Kids</a>
+                            <a href="accessories.html">Accessories</a>
+                        </div> 
+                    </li>
+                    <li><a href="New Arrivals.html">New Arrivals</a></li>
+                    <li><a href="Sale.html">Sale</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+              
+                <a href="account.html" class="icon-btn"><i class="fas fa-user"></i></a>
+                
+                <a href="cart.html" class="icon-btn cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="shipping-container">
+                <h1 class="page-title">Shipping & Returns</h1>
+                
+                <div class="info-section">
+                    <h2>Shipping Information</h2>
+                    <p>At DIRI BAKAL, we strive to deliver your orders as quickly and efficiently as possible. We ship to most countries worldwide through reliable courier services to ensure your items arrive safely and on time.</p>
+                    
+                    <div class="note-box">
+                        <p><strong>Note:</strong> Due to the current global situation, shipping times may be longer than usual. We appreciate your patience and understanding.</p>
+                    </div>
+                    
+                    <h3>Domestic Shipping</h3>
+                    <table class="shipping-table">
+                        <thead>
+                            <tr>
+                                <th>Shipping Method</th>
+                                <th>Delivery Time</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard Shipping</td>
+                                <td>3-5 business days</td>
+                                <td>$5.99</td>
+                            </tr>
+                            <tr>
+                                <td>Express Shipping</td>
+                                <td>1-2 business days</td>
+                                <td>$12.99</td>
+                            </tr>
+                            <tr>
+                                <td>Free Shipping</td>
+                                <td>5-7 business days</td>
+                                <td>Free on orders over $75</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>International Shipping</h3>
+                    <table class="shipping-table">
+                        <thead>
+                            <tr>
+                                <th>Region</th>
+                                <th>Delivery Time</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>North America</td>
+                                <td>7-10 business days</td>
+                                <td>$15.99</td>
+                            </tr>
+                            <tr>
+                                <td>Europe</td>
+                                <td>10-14 business days</td>
+                                <td>$19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Asia Pacific</td>
+                                <td>12-16 business days</td>
+                                <td>$22.99</td>
+                            </tr>
+                            <tr>
+                                <td>Rest of World</td>
+                                <td>14-21 business days</td>
+                                <td>$29.99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>Please note that international orders may be subject to customs duties and taxes, which are the responsibility of the customer and are not included in our shipping charges.</p>
+                </div>
+                
+                <div class="info-section">
+                    <h2>Return Policy</h2>
+                    <p>We want you to be completely satisfied with your purchase. If for any reason you're not happy with your order, you can return it within 30 days of delivery for a full refund or exchange.</p>
+                    
+                    <h3>Return Conditions:</h3>
+                    <ul>
+                        <li>Items must be unworn, unwashed, and in their original condition with all tags attached</li>
+                        <li>Swimwear, underwear, and jewelry can only be returned if the hygiene seal is unbroken</li>
+                        <li>Sale items marked as "Final Sale" cannot be returned or exchanged</li>
+                        <li>Items purchased with a promotional discount may be refunded at the discounted value</li>
+                    </ul>
+                    
+                    <h3>How to Return an Item</h3>
+                    <ol class="steps-list">
+                        <li>Log in to your account and go to your order history, or find your order confirmation email</li>
+                        <li>Select the item(s) you wish to return and the reason for your return</li>
+                        <li>Print the prepaid return shipping label (for domestic returns) or arrange your own return shipping (for international returns)</li>
+                        <li>Package your items securely in their original packaging if possible</li>
+                        <li>Attach the shipping label and drop off the package at the designated shipping carrier</li>
+                    </ol>
+                    
+                    <div class="note-box">
+                        <p><strong>Processing Time:</strong> Returns are typically processed within 5-7 business days of receipt. Refunds will be issued to the original payment method used for purchase.</p>
+                    </div>
+                    
+                    <h3>Exchanges</h3>
+                    <p>If you'd like to exchange an item for a different size or color, please follow the return process and place a new order for the desired item. This ensures the quickest processing time and availability of your preferred item.</p>
+                    
+                    <h3>Damaged or Incorrect Items</h3>
+                    <p>If you receive a damaged or incorrect item, please contact our customer service team within 48 hours of delivery with photos of the item and packaging. We'll arrange for a return or replacement at no cost to you.</p>
+                </div>
+                
+                <div class="info-section">
+                    <h2>Contact Us</h2>
+                    <p>If you have any questions about our shipping or return policies, please don't hesitate to contact our customer service team:</p>
+                    <p>Email: support@diribakal.com<br>
+                    Phone: 1-800-DIRI-BAK<br>
+                    Hours: Monday-Friday, 9am-5pm PST</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>DIRI BAKAL</h3>
+                    <p>Your one-stop destination for trendy and affordable fashion.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="accessories.html">Accessories</a></li>
+                        <li><a href="New Arrivals.html">New Arrivals</a></li>
+                        <li><a href="Sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html" class="active">Shipping & Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TambaySaColdZone. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

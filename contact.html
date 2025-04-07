@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Contact Us - DIRI BAKAL</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="home.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ </head>
+ <body>
+     <header>
+         <div class="container">
+             <div class="logo">
+                 <a href="index.html">DIRI BAKAL</a>
+             </div>
+             <nav>
+                 <ul class="main-menu">
+                     <li><a href="index.html">Home</a></li>
+                     <li class="dropdown">
+                         <a href="shop.html">Shop</a>
+                         <div class="dropdown-content">
+                             <a href="men.html">Men</a>
+                             <a href="women.html">Women</a>
+                             <a href="kids.html">Kids</a>
+                             <a href="accessories.html">Accessories</a>
+                         </div>
+                     </li>
+                     <li><a href="New Arrivals.html">New Arrivals</a></li>
+                     <li><a href="sale.html">Sale</a></li>
+                     <li><a href="about us.html">About Us</a></li>
+                     <li><a href="contact.html" class="active">Contact</a></li>
+                 </ul>
+             </nav>
+             <div class="user-actions">
+                 
+                 <a href="account.html" class="icon-btn"><i class="fas fa-user"></i></a>
+                 
+                 <a href="cart.html" class="icon-btn cart-icon">
+                     <i class="fas fa-shopping-cart"></i>
+                     <span class="cart-count">0</span>
+                 </a>
+             </div>
+             <div class="mobile-menu-toggle">
+                 <i class="fas fa-bars"></i>
+             </div>
+         </div>
+     </header>
+ 
+     <main>
+         <section class="page-banner contact-banner">
+             <div class="container">
+                 <h1>Contact Us</h1>
+                 <p>We'd love to hear from you</p>
+             </div>
+         </section>
+ 
+         <section class="contact-info">
+             <div class="container">
+                 <div class="contact-grid">
+                     <div class="contact-card">
+                         <div class="contact-icon">
+                             <i class="fas fa-map-marker-alt"></i>
+                         </div>
+                         <h3>Visit Us</h3>
+                         <p>ColdZone Lapaz Branch</p>
+                         <p>123 Tinda Lapaz</p>
+                         <p>La Paz, Batchoy 123</p>
+                     </div>
+                     <div class="contact-card">
+                         <div class="contact-icon">
+                             <i class="fas fa-phone-alt"></i>
+                         </div>
+                         <h3>Call Us</h3>
+                         <p>Customer Service: <a href="tel:18-700-Tambay-Sa-ColdZone">8-700-Tambay-Sa-ColdZone</a></p>
+                         <p>Corporate Office: <a href="tel:123-456-7890">123-456-7890</a></p>
+                         <p>Open Everyday, 48-hours per day</p>
+                     </div>
+                     <div class="contact-card">
+                         <div class="contact-icon">
+                             <i class="fas fa-envelope"></i>
+                         </div>
+                         <h3>Email Us</h3>
+                         <p>Customer Support: <a href="mailto:support@tambaysacoldzone.com">support@tambaysacoldzone.com</a></p>
+                         <p>Press Inquiries: <a href="mailto:press@tambaysacoldzone.com">press@tambaysacoldzone.com</a></p>
+                         <p>Careers: <a href="mailto:careers@tambaysacoldzone.com">careers@tambaysacoldzone.com</a></p>
+                     </div>
+                     <div class="contact-card">
+                         <div class="contact-icon">
+                             <i class="fas fa-comments"></i>
+                         </div>
+                 </div>
+             </div>
+         </section>
+ 
+         <section class="contact-form-section">
+             <div class="container">
+                 <h2>Send Us a Message</h2>
+                 <p class="form-intro">May pamangkot ka pa? kay e bunggo ta nalang ka!</p>
+                 <form id="contact-form" class="contact-form">
+                     <div class="form-grid">
+                         <div class="form-group">
+                             <label for="name">PANGALAN MO!*</label>
+                             <input type="text" id="name" name="name" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="email">Email Address *</label>
+                             <input type="email" id="email" name="email" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="phone">Phone Number</label>
+                             <input type="tel" id="phone" name="phone">
+                         </div>
+                         <div class="form-group">
+                             <label for="order-number">Order Number (if applicable)</label>
+                             <input type="text" id="order-number" name="order-number">
+                         </div>
+                         <div class="form-group full-width">
+                             <label for="subject">Subject *</label>
+                             <select id="subject" name="subject" required>
+                                 <option value="">Select a subject</option>
+                                 <option value="order-status">Order Status</option>
+                                 <option value="returns">Returns & Exchanges</option>
+                                 <option value="product">Product Information</option>
+                                 <option value="feedback">Feedback</option>
+                                 <option value="other">Other</option>
+                             </select>
+                         </div>
+                         <div class="form-group full-width">
+                             <label for="message">Message *</label>
+                             <textarea id="message" name="message" rows="6" required></textarea>
+                         </div>
+                         <div class="form-group full-width">
+                             <div class="checkbox-group">
+                                 <input type="checkbox" id="newsletter" name="newsletter">
+                                 <label for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+                             </div>
+                         </div>
+                         <div class="form-group full-width">
+                             <button type="submit" class="btn submit-btn">Send Message</button>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+         </section>
+ 
+     
+ 
+         <section class="faq-preview">
+             <div class="container">
+                 <div class="faq-content">
+                     <h2>Frequently Asked Questions</h2>
+                     <div class="faq-accordion">
+                         <div class="faq-item">
+                             <div class="faq-question">
+                                 <h3>What is your return policy?</h3>
+                                 <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                             </div>
+                             <div class="faq-answer">
+                                 <p>We offer a 30-day return policy on all unused items in their original packaging. For more details, please visit our <a href="shipping.html">Shipping & Returns</a> page.</p>
+                             </div>
+                         </div>
+                         <div class="faq-item">
+                             <div class="faq-question">
+                                 <h3>How long will shipping take?</h3>
+                                 <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                             </div>
+                             <div class="faq-answer">
+                                 <p>Standard shipping typically takes 3-5 business days within the continental US. Express shipping (1-2 business days) is also available at checkout for an additional fee.</p>
+                             </div>
+                         </div>
+                         <div class="faq-item">
+                             <div class="faq-question">
+                                 <h3>Do you ship internationally?</h3>
+                                 <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                             </div>
+                             <div class="faq-answer">
+                                 <p>Yes, we ship to over 50 countries worldwide. International shipping typically takes 7-14 business days, depending on the destination and customs processing.</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="faq-more">
+                         <a href="faq.html" class="btn">View All FAQs</a>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <footer>
+         <div class="footer-bottom">
+             <p>&copy; 2025 TambaySaColdZone. All Rights Reserved.</p>
+             <div class="payment-icons">
+                 <i class="fab fa-cc-visa"></i>
+                 <i class="fab fa-cc-mastercard"></i>
+                 <i class="fab fa-cc-amex"></i>
+                 <i class="fab fa-cc-paypal"></i>
+         
+         </div>
+     </footer>
+ 
+     <script src="main.js"></script>
+     <script src="../js/contact.js"></script>
+ </body>
+ </html>

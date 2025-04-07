@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping & Returns - DIRI BAKAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .size-guide-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .guide-section {
+            margin-bottom: 50px;
+        }
+        
+        .guide-section h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 30px;
+        }
+        
+        .size-table th, .size-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .size-table th {
+            background-color: #f8f8f8;
+        }
+        
+        .size-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .measurement-guide {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .measurement-item {
+            flex: 0 0 48%;
+            margin-bottom: 30px;
+        }
+        
+        .measurement-item h3 {
+            margin-bottom: 10px;
+        }
+        
+        .measurement-item p {
+            line-height: 1.6;
+        }
+        
+        .measurement-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .tab-btn.active {
+            color: #333;
+            border-bottom: 2px solid #4a90e2;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .conversion-note {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .measurement-item {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">DIRI BAKAL</a>
+            </div>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="shop.html">Shop</a>
+                        <div class="dropdown-content">
+                            <a href="men.html">Men</a>
+                            <a href="women.html">Women</a>
+                            <a href="kids.html">Kids</a>
+                            <a href="accessories.html">Accessories</a>
+                        </div> 
+                    </li>
+                    <li><a href="New Arrivals.html">New Arrivals</a></li>
+                    <li><a href="Sale.html">Sale</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+               
+                <a href="account.html" class="icon-btn"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="icon-btn cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="size-guide-container">
+                <h1 class="page-title">Size Guide</h1>
+                
+                <p>Finding the right size is essential for comfort and style. Use our comprehensive size guides below to find your perfect fit. If you're between sizes, we generally recommend sizing up for a more comfortable fit.</p>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="men">Men</button>
+                    <button class="tab-btn" data-tab="women">Women</button>
+                    <button class="tab-btn" data-tab="kids">Kids</button>
+                </div>
+                
+                <div id="men" class="tab-content active">
+                    <div class="guide-section">
+                        <h2>Men's Tops</h2>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Chest (inches)</th>
+                                    <th>Chest (cm)</th>
+                                    <th>Waist (inches)</th>
+                                    <th>Waist (cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>XS</td>
+                                    <td>34-36</td>
+                                    <td>86-91</td>
+                                    <td>28-30</td>
+                                    <td>71-76</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>36-38</td>
+                                    <td>91-97</td>
+                                    <td>30-32</td>
+                                    <td>76-81</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>38-40</td>
+                                    <td>97-102</td>
+                                    <td>32-34</td>
+                                    <td>81-86</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>40-42</td>
+                                    <td>102-107</td>
+                                    <td>34-36</td>
+                                    <td>86-91</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>42-44</td>
+                                    <td>107-112</td>
+                                    <td>36-38</td>
+                                    <td>91-97</td>
+                                </tr>
+                                <tr>
+                                    <td>XXL</td>
+                                    <td>44-46</td>
+                                    <td>112-117</td>
+                                    <td>38-40</td>
+                                    <td>97-102</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h2>Men's Bottoms</h2>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Waist (inches)</th>
+                                    <th>Waist (cm)</th>
+                                    <th>Hip (inches)</th>
+                                    <th>Hip (cm)</th>
+                                    <th>Inseam (inches)</th>
+                                    <th>Inseam (cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>28</td>
+                                    <td>28</td>
+                                    <td>71</td>
+                                    <td>35</td>
+                                    <td>89</td>
+                                    <td>32</td>
+                                    <td>81</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>30</td>
+                                    <td>76</td>
+                                    <td>37</td>
+                                    <td>94</td>
+                                    <td>32</td>
+                                    <td>81</td>
+                                </tr>
+                                <tr>
+                                    <td>32</td>
+                                    <td>32</td>
+                                    <td>81</td>
+                                    <td>39</td>
+                                    <td>99</td>
+                                    <td>32</td>
+                                    <td>81</td>
+                                </tr>
+                                <tr>
+                                    <td>34</td>
+                                    <td>34</td>
+                                    <td>86</td>
+                                    <td>41</td>
+                                    <td>104</td>
+                                    <td>32</td>
+                                    <td>81</td>
+                                </tr>
+                                <tr>
+                                    <td>36</td>
+                                    <td>36</td>
+                                    <td>91</td>
+                                    <td>43</td>
+                                    <td>109</td>
+                                    <td>32</td>
+                                    <td>81</td>
+                                </tr>
+                                <tr>
+                                    <td>38</td>
+                                    <td>38</td>
+                                    <td>97</td>
+                                    <td>45</td>
+                                    <td>114</td>
+                                    <td>32</td>
+                                    <td>81</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                 
+                    </div>
+                </div>
+                
+                <div id="women" class="tab-content">
+                    <div class="guide-section">
+                        <h2>Women's Tops</h2>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>US Size</th>
+                                    <th>Bust (inches)</th>
+                                    <th>Bust (cm)</th>
+                                    <th>Waist (inches)</th>
+                                    <th>Waist (cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>XS</td>
+                                    <td>0-2</td>
+                                    <td>31-33</td>
+                                    <td>79-84</td>
+                                    <td>24-26</td>
+                                    <td>61-66</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>4-6</td>
+                                    <td>33-35</td>
+                                    <td>84-89</td>
+                                    <td>26-28</td>
+                                    <td>66-71</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>8-10</td>
+                                    <td>35-37</td>
+                                    <td>89-94</td>
+                                    <td>28-30</td>
+                                    <td>71-76</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>12-14</td>
+                                    <td>37-40</td>
+                                    <td>94-102</td>
+                                    <td>30-33</td>
+                                    <td>76-84</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>16-18</td>
+                                    <td>40-43</td>
+                                    <td>102-109</td>
+                                    <td>33-36</td>
+                                    <td>84-91</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h2>Women's Bottoms</h2>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>US Size</th>
+                                    <th>Waist (inches)</th>
+                                    <th>Waist (cm)</th>
+                                    <th>Hip (inches)</th>
+                                    <th>Hip (cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>XS</td>
+                                    <td>0-2</td>
+                                    <td>24-26</td>
+                                    <td>61-66</td>
+                                    <td>34-36</td>
+                                    <td>86-91</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>4-6</td>
+                                    <td>26-28</td>
+                                    <td>66-71</td>
+                                    <td>36-38</td>
+                                    <td>91-97</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>8-10</td>
+                                    <td>28-30</td>
+                                    <td>71-76</td>
+                                    <td>38-40</td>
+                                    <td>97-102</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>12-14</td>
+                                    <td>30-33</td>
+                                    <td>76-84</td>
+                                    <td>40-43</td>
+                                    <td>102-109</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>16-18</td>
+                                    <td>33-36</td>
+                                    <td>84-91</td>
+                                    <td>43-46</td>
+                                    <td>109-117</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="measurement-guide">
+                        <div class="measurement-item">
+                            <div class="measurement-image">
+                                <img src="/api/placeholder/400/320" alt="Bust measurement guide" />
+                            </div>
+                            <h3>How to Measure Your Bust</h3>
+                            <p>Wrap a measuring tape around the fullest part of your bust, keeping the tape parallel to the floor. Ensure the tape is not too tight and you can breathe comfortably.</p>
+                        </div>
+                        
+                        <div class="measurement-item">
+                            <div class="measurement-image">
+                                <img src="/api/placeholder/400/320" alt="Hip measurement guide" />
+                            </div>
+                            <h3>How to Measure Your Hips</h3>
+                            <p>Measure around the fullest part of your hips, approximately 7-9 inches below your natural waistline. Make sure the tape is straight and parallel to the floor all the way around your body.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="kids" class="tab-content">
+                    <div class="guide-section">
+                        <h2>Kids' Clothing</h2>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Age</th>
+                                    <th>Height (inches)</th>
+                                    <th>Height (cm)</th>
+                                    <th>Chest (inches)</th>
+                                    <th>Chest (cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2T</td>
+                                    <td>2 years</td>
+                                    <td>33-36</td>
+                                    <td>84-91</td>
+                                    <td>21</td>
+                                    <td>53</td>
+                                </tr>
+                                <tr>
+                                    <td>3T</td>
+                                    <td>3 years</td>
+                                    <td>36-39</td>
+                                    <td>91-99</td>
+                                    <td>22</td>
+                                    <td>56</td>
+                                </tr>
+                                <tr>
+                                    <td>4T</td>
+                                    <td>4 years</td>
+                                    <td>39-42</td>
+                                    <td>99-107</td>
+                                    <td>23</td>
+                                    <td>58</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5 years</td>
+                                    <td>42-45</td>
+                                    <td>107-114</td>
+                                    <td>24</td>
+                                    <td>61</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>6 years</td>
+                                    <td>45-48</td>
+                                    <td>114-122</td>
+                                    <td>25</td>
+                                    <td>64</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>7 years</td>
+                                    <td>48-51</td>
+                                    <td>122-130</td>
+                                    <td>26</td>
+                                    <td>66</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>8 years</td>
+                                    <td>51-54</td>
+                                    <td>130-137</td>
+                                    <td>27</td>
+                                    <td>69</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>10 years</td>
+                                    <td>54-57</td>
+                                    <td>137-145</td>
+                                    <td>28</td>
+                                    <td>71</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>12 years</td>
+                                    <td>57-60</td>
+                                    <td>145-152</td>
+                                    <td>30</td>
+                                    <td>76</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h2>Kids' Shoe Sizes</h2>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>US Size</th>
+                                    <th>UK Size</th>
+                                    <th>EU Size</th>
+                                    <th>Foot Length (inches)</th>
+                                    <th>Foot Length (cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10C</td>
+                                    <td>9</td>
+                                    <td>27</td>
+                                    <td>6.25</td>
+                                    <td>15.9</td>
+                                </tr>
+                                <tr>
+                                    <td>11C</td>
+                                    <td>10</td>
+                                    <td>28</td>
+                                    <td>6.5</td>
+                                    <td>16.5</td>
+                                </tr>
+                                <tr>
+                                    <td>12C</td>
+                                    <td>11</td>
+                                    <td>30</td>
+                                    <td>6.75</td>
+                                    <td>17.1</td>
+                                </tr>
+                                <tr>
+                                    <td>13C</td>
+                                    <td>12</td>
+                                    <td>31</td>
+                                    <td>7</td>
+                                    <td>17.8</td>
+                                </tr>
+                                <tr>
+                                    <td>1Y</td>
+                                    <td>13</td>
+                                    <td>32</td>
+                                    <td>7.25</td>
+                                    <td>18.4</td>
+                                </tr>
+                                <tr>
+                                    <td>2Y</td>
+                                    <td>1</td>
+                                    <td>33</td>
+                                    <td>7.625</td>
+                                    <td>19.4</td>
+                                </tr>
+                                <tr>
+                                    <td>3Y</td>
+                                    <td>2</td>
+                                    <td>34</td>
+                                    <td>8</td>
+                                    <td>20.3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="conversion-note">
+                    <h3>Size Conversion Note</h3>
+                    <p>Our sizes are designed to be true to size, but sizing can vary depending on design and materials. If you're unsure about your size or fall between sizes, we recommend sizing up. For precise measurements, follow our measurement guide above.</p>
+                    <p>If you have any questions or need assistance with sizing, please <a href="contact.html">contact our customer service team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Shopping</h3>
+                    <ul>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="accessories.html">Accessories</a></li>
+                        <li><a href="New Arrivals.html">New Arrivals</a></li>
+                        <li><a href="Sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <form>
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DIRI BAKAL. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mainMenu = document.querySelector('.main-menu');
+            
+            if (mobileMenuToggle && mainMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mainMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
